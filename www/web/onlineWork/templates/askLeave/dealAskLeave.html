@@ -1,0 +1,52 @@
+<div class="list card" ng-repeat="data in datas">
+  <div ng-switch="data.task.taskDefinitionKey" ng-if="data.task.assignee">
+    <div ng-switch-when="deptLeaderAudit">
+      <a href="#/app/leadApproval/{{data.id}}/{{data.task.id}}" class="item item-avatar">
+        <img src="img/user.png">
+        <p style="font-size: 16px;line-height: 30px;">{{data.user.name}}的请假<span style="font-size: 14px;float:right">{{data.task.createTime}}</span></p>
+        <label class="task-label-claim">{{data.task.name}}</label>
+      </a>
+    </div>
+    <div ng-switch-when="hrAudit">
+      <a href="#/app/bigLeadApproval/{{data.id}}/{{data.task.id}}" class="item item-avatar">
+        <img src="img/user.png">
+        <p style="font-size: 16px;line-height: 30px;">{{data.user.name}}的请假<span style="font-size: 14px;float:right">{{data.task.createTime}}</span></p>
+        <label class="task-label-claim">{{data.task.name}}</label>
+      </a>
+    </div>
+    <div ng-switch-when="reportBack">
+      <a href="#/app/realAskLeave/{{data.id}}/{{data.task.id}}" class="item item-avatar">
+        <img src="img/user.png">
+        <p style="font-size: 16px;line-height: 30px;">{{data.user.name}}的请假<span style="font-size: 14px;float:right">{{data.task.createTime}}</span></p>
+        <label class="task-label-back">{{data.task.name}}</label>
+      </a>
+    </div>
+    <div ng-switch-when="modifyApply">
+      <a href="#/app/modifyAskLeave/{{data.id}}/{{data.task.id}}" class="item item-avatar">
+        <img src="img/user.png">
+        <p style="font-size: 16px;line-height: 30px;">{{data.user.name}}的请假<span style="font-size: 14px;float:right">{{data.task.createTime}}</span></p>
+        <label class="task-label-modify">{{data.task.name}}</label>
+      </a>
+    </div>
+  </div>
+
+  <div class="item item-avatar" ng-if="!data.task.assignee">
+    <img src="img/user.png">
+    <p style="font-size: 16px;line-height: 30px;">{{data.user.name}}的请假<span style="font-size: 14px;float:right">{{data.task.createTime}}</span></p>
+    <label class="task-label-claim">{{data.task.name}}</label>
+  </div>
+
+  <div class="item tabs tabs-icon-left stable-bg" ng-if="!data.task.assignee">
+    <a class="tab-item" ng-click="signLeave(data.task.id)">
+      <i class="icon ion-checkmark-circled balanced"></i>
+      签收
+    </a>
+  </div>
+</div>
+<div style="margin: 30px auto;display: block" ng-if="!datas">
+  <div class="no-data">
+    <p><i class="ion-social-reddit-outline positive"></i></p>
+    <p>暂无数据</p>
+  </div>
+</div>
+

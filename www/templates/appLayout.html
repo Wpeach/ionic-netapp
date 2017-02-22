@@ -1,0 +1,31 @@
+<ion-side-menus> <!--enable-menu-with-back-views="false"-->
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!--<ion-footer-bar class="has-tabs">-->
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-class="{'tabs-item-hide': $root.hideTabs}">
+      <ion-tab title="在线办公" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/app/index">
+        <ion-nav-view name="online-work" animation="slide-left-right"></ion-nav-view>
+      </ion-tab>
+
+      <!--&lt;!&ndash; login Tab &ndash;&gt;-->
+      <ion-tab title="AP监控" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes"
+               href="#/app/apMenu">
+        <ion-nav-view name="ap-monitor" animation="slide-left-right"></ion-nav-view>
+      </ion-tab>
+
+      <!--&lt;!&ndash; register Tab &ndash;&gt;-->
+      <ion-tab title="机房管理" icon-off="ion-ios-settings" icon-on="ion-ios-settings-strong"
+               href="#/app/dataMenu">
+        <ion-nav-view name="data-mg" animation="slide-left-right"></ion-nav-view>
+      </ion-tab>
+
+      <ion-tab title="用户中心" icon-off="ion-ios-person-outline" icon-on="ion-ios-person"
+               href="#/app/userCenter">
+        <ion-nav-view name="user-center" animation="slide-left-right"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+  </ion-side-menu-content>
+</ion-side-menus>

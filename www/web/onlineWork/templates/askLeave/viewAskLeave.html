@@ -1,0 +1,37 @@
+
+      <div class="list card"  ng-repeat="leave in selfLeave">
+        <div class="item item-divider">
+          <label>
+            <span class="h4">{{leave.createDate}}</span>
+          </label>
+        </div>
+
+        <div class="item view-item">
+          <label class="item">
+            <span>请假类型：</span>
+            <span>{{leave.leaveTypeDictLabel}}</span>
+          </label>
+          <label class="item">
+            <span>开始时间：</span>
+            <span>{{leave.startTime}}</span>
+          </label>
+          <label class="item">
+            <span>结束时间：</span>
+            <span>{{leave.endTime}}</span>
+          </label>
+          <label class="item">
+            <span>请假事由：</span>
+            <span>{{leave.reason}}</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin: 30px auto;display: block" ng-if="!selfLeave">
+        <div class="no-data">
+          <p><i class="ion-social-reddit-outline positive"></i></p>
+          <p>暂无数据</p>
+        </div>
+      </div>
+
+
+

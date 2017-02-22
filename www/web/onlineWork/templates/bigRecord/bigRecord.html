@@ -1,0 +1,32 @@
+<ion-view hide-tabs="true" view-title="大事记">
+  <ion-content>
+    <form name="form" ng-submit="addBigRecord()">
+        <ion-list>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            标题
+          </div>
+          <input type="text" ng-model="big.title" required>
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <div class="input-label">
+            事件时间
+          </div>
+          <input type="date" ng-model="big.eventDate" required>
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <textarea name="a" rows="4" placeholder="事件详情" ng-model="big.eventContent" required></textarea>
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <textarea name="a" rows="2" placeholder="备注信息" ng-model="big.remarks" required></textarea>
+        </ion-item>
+      </ion-list>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">提交</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

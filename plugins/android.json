@@ -1,0 +1,44 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-hot-code-push-local-dev-addon": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "cordova-hot-code-push-plugin": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "jpush-phonegap-plugin": {
+            "API_KEY": "e6b25c9c6feae7738a59d3f9",
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.netapp629217"
+        }
+    }
+}

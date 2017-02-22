@@ -1,0 +1,16 @@
+[
+  {
+    "leaveType":"事假",
+    "startTime":"2016-04-06",
+    "endTime":"2016-04-08",
+    "reason":"家里有事，得赶紧回去",
+    "createDate":"2016-04-05"
+  },
+  {
+    "leaveType":"病假",
+    "startTime":"2016-05-06",
+    "endTime":"2016-05-08",
+    "reason":"感冒，发高烧",
+    "createDate":"2016-05-05"
+  }
+]

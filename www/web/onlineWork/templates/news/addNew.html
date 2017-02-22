@@ -1,0 +1,39 @@
+<ion-view hide-tabs="true" view-title="添加通知公告">
+
+  <ion-content>
+      <ion-list>
+
+        <a href="#/app/addressBook/choose" class="item item-icon-right">
+          选择接收人
+          <i class="icon ion-plus-circled icon-accessory" style="font-size: 20px;"></i>
+        </a>
+        <div class="item">
+          <span  ng-repeat="ci in chooseItem" class="person-choose">{{ci.name}}</span>
+          <span ng-if="!chooseItem" class="person-choose">暂未选人</span>
+        </div>
+
+        <ion-item class="item item-input item-select">
+          <span class="input-label">类型</span>
+          <select ng-model="new.type" ng-options="item.value as item.label for item in notifyType"></select>
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <span class="input-label">标题</span>
+          <input type="text" ng-model="new.title">
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <span class="input-label">内容</span>
+          <input type="text" ng-model="new.content">
+        </ion-item>
+
+
+
+      </ion-list>
+    <div class="two-btn">
+      <button ng-click="quickRelease()">立刻发布</button>
+      <button ng-click="keepDraft()">存为草稿</button>
+    </div>
+  </ion-content>
+</ion-view>
+

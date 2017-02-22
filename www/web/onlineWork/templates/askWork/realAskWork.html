@@ -1,0 +1,62 @@
+<ion-view hide-tabs="true" view-title="确认加班情况">
+  <ion-content>
+    <form ng-submit="userConfirmWork()">
+    <ion-list>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          部门领导意见
+        </div>
+        <p>{{data.leadText}}</p>
+      </ion-item>
+
+      <div class="item item-divider">
+      </div>
+
+      <ion-item class="item item-input">
+        <div class="input-label">
+          工作地点
+        </div>
+        <p>{{data.place}}</p>
+      </ion-item>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          工作事项
+        </div>
+        <p>{{data.workDesc}}</p>
+      </ion-item>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          开始时间
+        </div>
+        <p>{{data.startDate}}</p>
+      </ion-item>
+      <ion-item class="item item-input chevron-right">
+        <div class="input-label">
+          结束时间
+        </div>
+       <p>{{data.endDate}}</p>
+      </ion-item>
+      <div class="item item-divider">
+        请填写实际的加班时间：
+      </div>
+      <div class="item item-input" ion-datetime-picker ng-model="userConfirm.beginDate">
+        <div class="input-label">
+          开始时间
+        </div>
+        {{userConfirm.beginDate| date: "yyyy-MM-dd H:mm"}}
+      </div>
+      <div class="item item-input chevron-right" ion-datetime-picker ng-model="userConfirm.endTime">
+        <div class="input-label">
+          结束时间
+        </div>
+        {{userConfirm.endTime| date: "yyyy-MM-dd H:mm"}}
+      </div>
+    </ion-list>
+    <div class="padding">
+      <button class="button button-block button-positive">提交</button>
+    </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+

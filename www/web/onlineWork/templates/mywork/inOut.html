@@ -1,0 +1,21 @@
+<form ng-submit="trafficData(selectValue)" name="from">
+  <div class="item item-input item-select">
+    <div class="input-label">
+      设备编号
+    </div>
+    <select ng-model="selectValue" ng-options="item.id as item.name for item in items"></select>
+  </div>
+  <div class="padding">
+    <button type="submit" class="button button-block button-positive">查询</button>
+  </div>
+</form>
+<div style="width: 100%" class="page-panel">
+  <p class="canvas-title">进出口流量统计</p>
+  <canvas style="display:block;margin: 0 auto;" height="300px" class="chart chart-line" chart-data="data" chart-labels="labels" chart-options="options" chart-colors="colors"
+          chart-series="series"></canvas>
+</div>
+<!--<div class="two-btn">-->
+  <!--<button ng-click="up()">上一页</button>-->
+  <!--<button ng-click="down()">下一页</button>-->
+<!--</div>-->
+

@@ -1,0 +1,53 @@
+/**
+ * Created by Wpeach on 2016/11/16.
+ */
+angular.module('netMg.module.user',[])
+  .config(['$stateProvider',function ($stateProvider) {
+    $stateProvider
+      .state('app.userCenter',{
+        url:'/userCenter',
+        cache: false,
+        views:{
+          'user-center':{
+            templateUrl:'web/userCenter/templates/userCenter.html',
+            controller:'UserController'
+          }
+        }
+      })
+      .state('app.setting',{
+        url:'/setting',
+        views:{
+          'user-center':{
+            templateUrl:'web/userCenter/templates/setting.html',
+            controller:'UserController'
+          }
+        }
+      })
+      .state('app.alterMsg',{
+        url:'/alterMsg',
+        views:{
+          'user-center':{
+            templateUrl:'web/userCenter/templates/alterMsg.html',
+            controller:'UserController'
+          }
+        }
+      })
+      .state('app.userDetail',{
+        url:'/userDetail/:id',
+        views:{
+          'user-center':{
+            templateUrl:'web/userCenter/templates/userDetail.html',
+            controller:'UserDetailCtrl'
+          }
+        }
+      })
+      .state('app.addressBook',{
+        url:'/addressBook/:status',
+        views:{
+          'user-center':{
+            templateUrl:'web/userCenter/templates/addressBook.html',
+            controller:'AddressBookCtrl'
+          }
+        }
+      })
+  }]);

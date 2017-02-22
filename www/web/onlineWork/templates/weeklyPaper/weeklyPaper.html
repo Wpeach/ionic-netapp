@@ -1,0 +1,96 @@
+<ion-view hide-tabs="true" view-title="实习生周报">
+  <div class="bar bar-subheader">
+    <div class="paper-head-menu">
+      <ul>
+        <li><a ng-click="choose(0)" ng-class="{'active':0==currentMenuIndex}">我收到的</a></li>
+        <li><a ng-click="choose(1)" ng-class="{'active':1==currentMenuIndex}">我发出的</a></li>
+      </ul>
+    </div>
+  </div>
+  <ion-content>
+    <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+    <div style="margin-top: 60px;" class=" has-tabs-top has-tabs ionic-pseudo" >
+
+      <div class="list card" ng-repeat="paper in papers">
+
+        <div class="item item-avatar">
+          <img src="img/user.png">
+          <h2>{{paper.author}}</h2>
+          <p>开发部人员&nbsp;{{paper.remarks}}</p>
+        </div>
+        <div class="item">
+          <label class="item">
+            <span>本周完成工作：</span>
+            <span>{{paper.finnishedwork}}</span>
+          </label>
+          <label class="item">
+            <span>本周工作总结：</span>
+            <span>{{paper.summary}}</span>
+          </label>
+          <label class="item">
+            <span>下周工作计划：</span>
+            <span>{{paper.plan}}</span>
+          </label>
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#">
+            <i class="icon ion-thumbsup"></i>
+            Like
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-chatbox"></i>
+            Comment
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-share"></i>
+            Share
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+
+          <div class="has-header  has-tabs ionic-pseudo">
+
+            <div class="list card">
+
+              <div class="item item-avatar">
+                <img src="img/adam.jpg">
+                <h2>翁培琦</h2>
+                <p>开发部人员</p>
+              </div>
+              <div class="item">
+                <label class="item">
+                  <span>本周完成工作：</span>
+                  <span>设计手机UI界面</span>
+                </label>
+                <label class="item">
+                  <span>本周工作总结：</span>
+                  <span>设计手机UI界面</span>
+                </label>
+                <label class="item">
+                  <span>下周工作计划：</span>
+                  <span>设计手机UI界面</span>
+                </label>
+              </div>
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup"></i>
+                  Like
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox"></i>
+                  Comment
+                </a>
+                <a class="tab-item" href="#">
+                  <i class="icon ion-share"></i>
+                  Share
+                </a>
+              </div>
+              </label>
+            </div>
+          </div>
+  </ion-content>
+</ion-view>
+

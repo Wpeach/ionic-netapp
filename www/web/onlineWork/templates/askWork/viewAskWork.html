@@ -1,0 +1,40 @@
+
+
+      <div class="list card" ng-repeat="work in works">
+        <div class="item item-divider">
+          <label>
+            <span class="h4">{{work.createDate}}</span>
+            <!--<span class="h5 balanced">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;审核通过</span>-->
+          </label>
+        </div>
+
+        <div class="item view-item">
+          <label class="item">
+            <span>工作事项：</span>
+            <span>{{work.workDesc}}</span>
+          </label>
+          <label class="item">
+            <span>工作地点：</span>
+            <span>{{work.place}}</span>
+          </label>
+          <label class="item">
+            <span>开始时间：</span>
+            <span>{{work.startDate}}</span>
+          </label>
+          <label class="item">
+            <span>结束时间：</span>
+            <span>{{work.endDate}}</span>
+          </label>
+          <label class="item">
+            <span>总计时数：</span>
+            <span>{{work.sumHour}}小时</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin: 30px auto;display: block" ng-if="!works">
+        <div class="no-data">
+          <p><i class="ion-social-reddit-outline positive"></i></p>
+          <p>暂无数据</p>
+        </div>
+      </div>

@@ -1,0 +1,74 @@
+<ion-view hide-tabs="true" view-title="确认请假情况">
+
+
+  <ion-content>
+    <form ng-submit="userConfirmWork()">
+      <ion-list>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            部门领导意见
+          </div>
+          <p>{{data.variables.leaderBackReason}}</p>
+        </ion-item>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            部门领导意见
+          </div>
+          <p>{{data.variables.hrBackReason}}</p>
+        </ion-item>
+
+        <div class="item item-divider">
+        </div>
+
+        <ion-item class="item item-input">
+          <div class="input-label">
+            请假类型
+          </div>
+          <p>{{data.leaveTypeDictLabel}}</p>
+        </ion-item>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            请假事由
+          </div>
+          <p>{{data.reason}}</p>
+        </ion-item>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            开始时间
+          </div>
+          <p>{{data.startTime}}</p>
+        </ion-item>
+        <ion-item class="item item-input chevron-right">
+          <div class="input-label">
+            结束时间
+          </div>
+          <p>{{data.endTime}}</p>
+        </ion-item>
+
+        <div class="item item-divider">
+          请填写实际的请假时间：
+        </div>
+
+        <div class="item item-input" ion-datetime-picker ng-model="userConfirm.realityStartTime">
+          <div class="input-label">
+            开始时间
+          </div>
+          {{userConfirm.realityStartTime| date: "yyyy-MM-dd H:mm"}}
+        </div>
+
+        <div class="item item-input chevron-right" ion-datetime-picker ng-model="userConfirm.realityEndTime">
+          <div class="input-label">
+            结束时间
+          </div>
+          {{userConfirm.realityEndTime| date: "yyyy-MM-dd H:mm"}}
+        </div>
+
+      </ion-list>
+      <div class="padding">
+        <button class="button button-block button-positive">提交</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+

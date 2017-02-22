@@ -1,0 +1,38 @@
+<ion-view view-title="AP监控" animation="no-animation">
+  <div class="bar bar-subheader">
+    <div class="ap-head-menu">
+      <ul>
+        <li><a href="#/app/apMonitor" ng-click="choose(0)" ng-class="{'active':0==currentMenuIndex}">实时</a></li>
+        <li><a href="#/app/apHis" ng-click="choose(1)" ng-class="{'active':1==currentMenuIndex}">分时</a></li>
+        <li><a href="#/app/apHis" ng-click="choose(2)" ng-class="{'active':2==currentMenuIndex}">天</a></li>
+        <li><a href="#/app/apHis" ng-click="choose(3)" ng-class="{'active':3==currentMenuIndex}">周</a></li>
+        <li><a href="#/app/apHis" ng-click="choose(4)" ng-class="{'active':4==currentMenuIndex}">月</a></li>
+        <li><a href="#/app/apHis" ng-click="choose(5)" ng-class="{'active':5==currentMenuIndex}">年</a></li>
+      </ul>
+    </div>
+  </div>
+  <ion-content>
+      <div style="margin-top: 55px;width: 100%">
+        <h4 style="color:#888;text-align: center">实时在线ap  总数{{barTotal}}</h4>
+        <canvas style="display:block;margin: 0 auto;" id="bar" height="220px" class="chart chart-bar" chart-data="barData" chart-labels="barLabels" chart-series="barSeries" ></canvas>
+      </div>
+      <table class="table-msg">
+        <thead>
+        <tr>
+          <th>AC品牌名</th>
+          <th>AC名称</th>
+          <th>设备IP</th>
+          <th>备注信息</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="ac in data1">
+          <td>{{ac.acBrand}}</td>
+          <td>{{ac.acName}}</td>
+          <td>{{ac.deviceIp}}</td>
+          <td>{{ac.remarks}}</td>
+        </tr>
+        </tbody>
+      </table>
+  </ion-content>
+</ion-view>

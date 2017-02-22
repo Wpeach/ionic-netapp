@@ -1,0 +1,37 @@
+<ion-view hide-tabs="true" view-title="请假">
+
+  <ion-content>
+    <form ng-submit="addAskLeave()">
+    <ion-list>
+      <ion-item class="item item-input item-select">
+        <div class="input-label">
+          请假类型
+        </div>
+        <select ng-model="askLeave.leaveType" ng-options="item.id as item.name for item in leaveLevel"></select>
+      </ion-item>
+
+
+      <div class="item item-input" ion-datetime-picker ng-model="askLeave.startTime">
+        <div class="input-label">
+          开始时间
+        </div>
+        {{askLeave.startTime| date: "yyyy-MM-dd H:mm"}}
+      </div>
+
+      <div class="item item-input chevron-right" ion-datetime-picker ng-model="askLeave.endTime">
+        <div class="input-label">
+          结束时间
+        </div>
+        {{askLeave.endTime| date: "yyyy-MM-dd H:mm"}}
+      </div>
+
+      <ion-item class="item item-input">
+        <textarea name="a" rows="4" placeholder="请假事由" ng-model="askLeave.reason"></textarea>
+      </ion-item>
+    </ion-list>
+    <div class="padding">
+      <button class="button button-block button-positive">提交</button>
+    </div>
+    </form>
+  </ion-content>
+</ion-view>

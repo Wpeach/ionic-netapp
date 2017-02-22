@@ -1,0 +1,54 @@
+<ion-view hide-tabs="true" view-title="通知查看">
+
+
+  <ion-content>
+      <ion-list>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            类型
+          </div>
+          <p>{{data.typename}}</p>
+        </ion-item>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            标题
+          </div>
+          <p>{{data.title}}</p>
+        </ion-item>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            内容
+          </div>
+          <p>{{data.content}}</p>
+        </ion-item>
+
+        <div style="padding-top: 20px;background-color: #fff;padding-bottom: 5px;">
+          <p style="padding-left: 10px;color:#888">已查阅:{{data.readNum}}&nbsp;&nbsp;未查阅:{{data.unReadNum}}&nbsp;&nbsp;总共:{{data.totalRead}}</p>
+          <table class="table-msg">
+            <thead>
+            <tr>
+              <th>接受人</th>
+              <th>接受部门</th>
+              <th>阅读状态</th>
+              <th>阅读时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="orl in data.oaNotifyRecordList">
+              <td>{{orl.user.name}}</td>
+              <td>{{orl.user.office.name}}</td>
+              <td ng-if="orl.readFlag=='1'">已读</td>
+              <td ng-if="orl.readFlag=='0'">未读</td>
+              <td>{{orl.readDate}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </ion-list>
+
+  </ion-content>
+</ion-view>
+
+
+

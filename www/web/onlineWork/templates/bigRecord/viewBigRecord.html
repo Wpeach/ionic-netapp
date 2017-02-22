@@ -1,0 +1,53 @@
+<ion-view hide-tabs="true" view-title="查看大事记" >
+  <ion-nav-buttons side="right">
+    <a class="button" href="#/app/bigRecord">
+      记大事记
+    </a>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+
+    <div class=" has-tabs-top has-tabs ionic-pseudo">
+
+      <div class="list card"  ng-repeat="data in datas">
+        <div class="item item-divider">
+          <label>
+            <span class="h4">{{data.createDate}}</span>
+          </label>
+          <!--<a style="float: right;color:#7cc4e7" ng-click="deleteBigRecord(data.id)">删除</a>-->
+        </div>
+
+        <div class="item view-item">
+          <label class="item">
+            <span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</span>
+            <span>{{data.title}}</span>
+          </label>
+          <label class="item">
+            <span>所在部门：</span>
+            <span ng>{{data.office.name}}</span>
+          </label>
+          <label class="item">
+            <span>事件时间：</span>
+            <span>{{data.eventDate}}</span>
+          </label>
+          <label class="item">
+            <span>事件详情：</span>
+            <span>{{data.eventContent}}</span>
+          </label>
+          <label class="item">
+            <span>备注信息：</span>
+            <span>{{data.remarks}}</span>
+          </label>
+        </div>
+    </div>
+
+    </div>
+
+    <div style="margin: 30px auto;display: block" ng-if="!datas">
+      <div class="no-data">
+        <p><i class="ion-social-reddit-outline positive"></i></p>
+        <p>暂无数据</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

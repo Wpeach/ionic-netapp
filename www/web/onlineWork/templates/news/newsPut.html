@@ -1,0 +1,48 @@
+
+<div class="card" ng-repeat="data in putList">
+  <a ng-if="data.status=='0'" href="#/app/newSaved/{{data.id}}">
+    <div class="item item-divider">
+      {{data.typename}}
+      <span style="float:right;color:#4cd964">草稿</span>
+    </div>
+    <div class="item item-text-wrap">
+      <div class="item item-icon-left">
+        <i class="icon ion-chatbubble-working calm"></i>
+        {{data.title}}
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-clock energized"></i>
+        {{data.createDate}}
+      </div>
+    </div>
+    <div class="item item-divider">
+      {{data.readNum}}人已读&nbsp;&nbsp;{{data.unReadNum}}人未读
+    </div>
+  </a>
+  <a ng-if="data.status=='1'" href="#/app/newDetail/{{data.id}}">
+    <div class="item item-divider">
+      {{data.typename}}
+    </div>
+    <div class="item item-text-wrap">
+      <div class="item item-icon-left">
+        <i class="icon ion-chatbubble-working calm"></i>
+        {{data.title}}
+      </div>
+      <div class="item item-icon-left">
+        <i class="icon ion-clock energized"></i>
+        {{data.createDate}}
+      </div>
+    </div>
+    <div class="item item-divider">
+      {{data.readNum}}人已读&nbsp;&nbsp;{{data.unReadNum}}人未读
+    </div>
+  </a>
+</div>
+
+<div style="margin: 30px auto;display: block" ng-if="!putList">
+  <div class="no-data">
+    <p><i class="ion-social-reddit-outline positive"></i></p>
+    <p>暂无数据</p>
+  </div>
+</div>
+

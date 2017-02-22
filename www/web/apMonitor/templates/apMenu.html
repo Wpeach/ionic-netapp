@@ -1,0 +1,16 @@
+<ion-view view-title="AP监控" animation="no-animation">
+  <ion-content has-bouncing="false">
+    <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh(slectIndex)"></ion-refresher>
+    <div style="display:flex;width:100%;" class="page-panel">
+      <div style="flex:1;text-align: center;" class="tab_default" ng-repeat="d in tabNames" ng-click="activeSlide($index)" ng-class="slectIndex==$index ? 'tab_select' : '' ">
+        {{d}}
+        <!--<div class="arrow-top" style="left:{{7.8+$index*16}}%" ng-show="slectIndex==$index"></div>-->
+      </div>
+    </div>
+    <ion-slide-box on-slide-changed="slideChanged(index)" active-slide="slideIndex" does-continue="false" show-pager="false">
+      <ion-slide ng-repeat="p in pages">
+        <div ng-include="p"></div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+
+<ion-view hide-tabs="true" view-title="加班详情">
+  <ion-content>
+    <div class="item item-input">
+      <div class="input-label">申请人</div>
+      <p>{{data.user.name}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">申请部门</div>
+      <p>{{data.office.name}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">申请时间</div>
+      <p>{{data.createDate}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">开始时间</div>
+      <p>{{data.startDate}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">结束时间</div>
+      <p>{{data.endDate}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">总计时数</div>
+      <p>{{data.sumHour}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">加班地点</div>
+      <p>{{data.place}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">工作事项</div>
+      <p>{{data.workDesc}}</p>
+    </div>
+    <div class="item item-input">
+      <div class="input-label">备注信息</div>
+      <p>{{data.remarks}}</p>
+    </div>
+
+    <div class="two-btn">
+      <button ng-click="agreeWork()">同意</button>
+      <button ng-click="refuseWork()">驳回</button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+
+<ion-view hide-tabs="true" view-title="通讯录">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-checkmark-circled"
+            ng-show="selectionActive"
+            ng-click="finish()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <div ng-repeat="group in groups">
+        <ion-item
+                  ng-click="toggleGroup(group)"
+                  ng-class="{active: isGroupShown(group)}">
+          <i class="icon" ng-class="isGroupShown(group) ? 'ion-arrow-down-b' : 'ion-arrow-right-b'"></i>
+          &nbsp;
+          {{group.name}}
+          <label style="font-size: 16px;float:right;">{{group.number}}</label>
+        </ion-item>
+
+        <ion-item ng-if="status=='choose'"
+                  ng-repeat="item in group.items"
+                  ng-show="isGroupShown(group)"
+                  letters-of="{{item.userId.name}}"
+                  item="{{item.userId}}"
+                  background="random"
+                  border="none"
+                  color="white"
+                  href="">
+          <h2>{{item.userId.name}}</h2>
+          <p>{{item.phone}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+        <ion-item ng-if="status=='normal'"
+                  ng-repeat="item in group.items"
+                  ng-show="isGroupShown(group)"
+                  letters-of="{{item.userId.name}}"
+                  background="random"
+                  border="none"
+                  color="white"
+                  href="#/app/userDetail/{{item.userId.id}}">
+          <h2>{{item.userId.name}}</h2>
+          <p>{{item.phone}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+        </ion-item>
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

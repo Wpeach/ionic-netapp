@@ -1,0 +1,55 @@
+<ion-view view-title="用户中心">
+  <ion-content>
+    <div class="item item-divider">
+    </div>
+    <div class="page-panel">
+      <a href="#/app/userDetail/{{user.id}}" class="item item-avatar">
+        <image height="" src="img/user.png" width=""></image>
+        <h2>{{user.name}}</h2>
+        <p><i class="icon ion-ios-pricetags-outline icon-accessory"></i>&nbsp;&nbsp;<span  ng-repeat="role in user.role">{{role}}&nbsp;&nbsp;</span></p>
+      </a>
+    </div>
+
+    <div class="item item-divider">
+    </div>
+
+    <div class="list">
+      <div class="item">
+        所属部门
+        <span class="item-note">{{user.officeName}}</span>
+      </div>
+      <div class="item">
+        邮箱
+        <span class="item-note">{{user.email}}</span>
+      </div>
+      <div class="item">
+        手机
+        <span class="item-note">{{user.phone}}</span>
+      </div>
+
+      <div class="item item-divider">
+
+      </div>
+      <a href="#/app/alterMsg" class="item item-icon-left item-icon-right">
+        <i class="icon ion-ios-telephone-outline calm" style="font-size: 24px"></i>
+        修改信息
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+      <a href="#/app/addressBook/normal" class="item item-icon-left item-icon-right">
+        <i class="icon ion-person-stalker balanced" style="font-size: 24px"></i>
+        通讯录
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+      <a ng-click="logout()" class="item item-icon-left item-icon-right">
+        <i class="icon ion-log-out assertive" style="font-size: 24px"></i>
+        退出
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+      <a href="#/app/setting" class="item item-icon-left item-icon-right">
+        <i class="icon ion-android-options positive" style="font-size: 24px"></i>
+        设置
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

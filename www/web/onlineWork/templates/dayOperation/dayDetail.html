@@ -1,0 +1,382 @@
+<ion-view hide-tabs="true" view-title="工作详情">
+  <ion-content>
+      <ion-list>
+        <div class="item item-input">
+          <div class="input-label">
+            值班人
+          </div>
+          <p>{{day.workman}}</p>
+        </div>
+
+        <ion-item class="item item-input">
+          <div class="input-label">
+            校区
+          </div>
+          <p>{{day.campus}}</p>
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <div class="input-label">
+            时间
+          </div>
+          <p>{{day.date}}</p>
+        </ion-item>
+
+        <div class="item item-divider">
+          <label>一、机房机柜环境检查</label>
+        </div>
+        <ion-item class="item item-input">
+          <p style="font-size: smaller;color: #9e9e9e">机柜、服务器、空调、UPS、如有异常（告警灯告警音）请记录，需记录机柜编号和机器编号，并记录最终处理结果。</p>
+        </ion-item>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.aexp0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            13：30
+          </div>
+          <p>{{day.aExp1330}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19：30
+          </div>
+          <p>{{day.aExp1930}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            20：30
+          </div>
+          <p>{{day.aExp2030}}</p>
+        </div>
+        <div class="item item-divider">
+          <label>二、重点网站和系统</label>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">学校首页&nbsp;www.ncu.edu.cn</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.bWww0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.bWww1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.bWww1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">校园邮件&nbsp;mail.ncu.edu.cn</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.bMail0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.bMail1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.bMail1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">学校OA&nbsp;oa.ncu.edu.cn</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.bOa0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.bOa1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.bOa1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">WEB-VPN&nbsp;webvpn.ncu.edu.cn</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.bWeb0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.bWeb1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.bWeb1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">校园门户&nbsp;www.ncu.edu.cn</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.bMy0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.bMy1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.bMy1900}}</p>
+        </div>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            说明
+          </div>
+          <p>{{day.bExplain}}</p>
+        </ion-item>
+
+
+        <div class="item item-divider">
+          <label>二、what's up拓扑监控</label>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">有线网监控</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.cWire0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.cWire1330}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.cWire1930}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">无线网监控</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.cWireless0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.cWireless1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.cWireless1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">节能、指纹等网络监控</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.cEnergy0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.cEnergy1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.cEnergy1900}}</p>
+        </div>
+
+
+        <div class="item item-divider">
+          <label>四、流量监控（mrtg2.ncu.edu.cn）</label>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">校出口流量</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.dSchool0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.dSchool1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.dSchool1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">运营商无线总流量</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.dOperat0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.dOperat1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.dOperat1900}}</p>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">重要节点流量</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            8：30
+          </div>
+          <p>{{day.dPart0830}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            14:00
+          </div>
+          <p>{{day.dPart1400}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            19:00
+          </div>
+          <p>{{day.dPart1900}}</p>
+        </div>
+
+
+        <div class="item item-divider">
+          <label>五、AP在线数监控</label>
+        </div>
+        <div class="item">
+          <p style="font-size: smaller;color: #9e9e9e">掉线AP当天发现当天处理，以每天早上数据为准</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            总数
+          </div>
+          <p>{{day.total}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            AC板卡1
+          </div>
+          <p>{{day.ac1}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            AC板卡2
+          </div>
+          <p>{{day.ac2}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            AC板卡3
+          </div>
+          <p>{{day.ac3}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            AC板卡4
+          </div>
+          <p>{{day.ac4}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            AC板卡5
+          </div>
+          <p>{{day.ac5}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            AC板卡6
+          </div>
+          <p>{{day.ac6}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            锐捷板卡
+          </div>
+          <p>{{day.ruijie}}</p>
+        </div>
+        <div class="item item-input">
+          <div class="input-label">
+            ArubaAC
+          </div>
+          <p>{{day.arubaac}}</p>
+        </div>
+
+        <div class="item item-divider">
+          <label>六、其它需说明的问题</label>
+        </div>
+        <ion-item class="item item-input">
+          <div class="input-label">
+            问题说明
+          </div>
+          <p>{{day.totalExplain}}</p>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>
+
+
+

@@ -1,0 +1,14 @@
+<ion-view hide-tabs="true" view-title="Ncu监控">
+  <ion-content>
+    <ion-refresher refreshing-icon="ion-loading-c" refreshing-text="云端获取数据中..." pulling-text="下拉刷新数据..." on-refresh="doRefresh()"></ion-refresher>
+    <div style="width: 100%" class="page-panel">
+      <p class="canvas-title">深澜在线用户数统计</p>
+      <canvas style="display:block;margin: 0 auto;" id="ap" height="220px" class="chart chart-line" chart-data="ncuData" chart-labels="ncuLabel" ></canvas>
+    </div>
+    <!--<div style="width: 100%" class="page-panel">-->
+      <!--<p class="canvas-title">进出口流量统计</p>-->
+      <!--<canvas style="display:block;margin: 0 auto;" id="trffic" height="220px" class="chart chart-line" data="trafficData" chart-labels="trafficLabel" chart-series="series"  legend="true"></canvas>-->
+    <!--</div>-->
+
+  </ion-content>
+</ion-view>

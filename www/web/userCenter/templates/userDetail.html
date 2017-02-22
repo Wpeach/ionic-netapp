@@ -1,0 +1,43 @@
+<ion-view hide-tabs="true" view-title="用户资料页">
+  <ion-content style="background-color: #efeff4">
+    <!--<ion-item class="item-avatar">-->
+      <!--<image src="img/user.png" width=""></image>-->
+      <!--<h2>{{data.name}}</h2>-->
+      <!--<p><i class="icon ion-ios-pricetags-outline icon-accessory"></i>&nbsp;&nbsp;<span  ng-repeat="role in data.role">{{role}}&nbsp;&nbsp;</span></p>-->
+    <!--</ion-item>-->
+    <div>
+      <img src="img/user.png" style="border-radius: 50%;width: 30%;margin: 30px auto 15px;display: block">
+      <p style="text-align: center;font-size: larger;color: #444;">{{data.name}}</p>
+      <p style="text-align: center;color:#888;margin-bottom: 15px;"><i class="icon ion-ios-pricetags-outline icon-accessory"></i>&nbsp;&nbsp;<span  ng-repeat="role in data.role">{{role}}&nbsp;&nbsp;</span></p>
+    </div>
+      <div class="list">
+        <div class="item">
+          所属部门
+          <span class="item-note">{{data.office.name}}</span>
+        </div>
+        <div class="item">
+          邮箱
+          <span class="item-note">{{data.email}}</span>
+        </div>
+        <div class="item">
+          座机号
+          <span class="item-note">{{data.phone}}</span>
+        </div>
+        <div class="item">
+          手机
+          <span class="item-note">{{data.mobile}}</span>
+        </div>
+        <div class="item">
+          近期登录
+          <span class="item-note">{{data.oldLoginDate}}</span>
+        </div>
+        <!--<div class="item">-->
+          <!--教师工号-->
+          <!--<span class="item-note">{{data.no}}</span>-->
+        <!--</div>-->
+      </div>
+    <div class="padding">
+      <a ng-click="callPhone(data.mobile)" class="button button-block button-balanced"><i class="icon ion-android-call"></i></a> 
+    </div>
+    </ion-content>
+  </ion-view>

@@ -1,0 +1,25 @@
+<div style="width: 100%" class="page-panel">
+  <p class="canvas-title">实时在线ap  总数{{barTotal}}</p>
+  <!--<canvas id="bar" class="chart chart-bar" data="data" chart-labels="site.ChartLabels" legend="true" series="series" options="{showTooltips: true}"></canvas>-->
+  <canvas style="display:block;margin: 0 auto;" id="bar" height="220px" class="chart chart-bar" chart-data="barData" chart-labels="barLabels" chart-series="barSeries" ></canvas>
+</div>
+<div class="page-panel" style="padding-top: 5px;margin-top: 10px;">
+  <table class="table-msg">
+    <thead>
+    <tr>
+      <th>AC品牌名</th>
+      <th>AC名称</th>
+      <th>设备IP</th>
+      <th>备注信息</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="ac in data1">
+      <td>{{ac.acBrand}}</td>
+      <td>{{ac.acName}}</td>
+      <td>{{ac.deviceIp}}</td>
+      <td>{{ac.remarks}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

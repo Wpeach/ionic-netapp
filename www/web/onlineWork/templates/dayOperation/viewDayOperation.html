@@ -1,0 +1,37 @@
+<ion-view hide-tabs="true" view-title="查看运维日志" >
+  <ion-nav-buttons side="right">
+    <a class="button" href="#/app/dayOperation">
+      新增日志
+    </a>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class=" has-tabs-top has-tabs ionic-pseudo">
+
+      <div class="list card"  ng-repeat="data in datas">
+        <div class="item item-divider">
+          <label>
+            <span class="h4">{{data.date}}</span>
+          </label>
+          <a style="float:right" href="#/app/days/{{data.id}}">查看</a>
+        </div>
+
+        <div class="item view-item">
+          <label class="item">
+            <span>校区：</span>
+            <span>{{data.campus}}</span>
+          </label>
+          <label class="item">
+            <span>值班人：</span>
+            <span ng>{{data.workman}}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div style="margin: 30px auto;display: block" ng-if="!datas">
+      <div class="no-data">
+        <p><i class="ion-social-reddit-outline positive"></i></p>
+        <p>暂无数据</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

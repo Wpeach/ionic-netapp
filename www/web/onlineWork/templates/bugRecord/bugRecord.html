@@ -1,0 +1,44 @@
+<ion-view hide-tabs="true" view-title="记录故障">
+  <ion-content>
+    <form name="form" ng-submit="addBugRecord()">
+    <ion-list>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          标题
+        </div>
+        <input type="text" ng-model="bugRecord.title">
+      </ion-item>
+
+      <ion-item class="item item-input">
+        <div class="input-label">
+          事件时间
+        </div>
+        <input type="date" ng-model="bugRecord.eventDate">
+      </ion-item>
+
+      <ion-item class="item item-input item-select">
+        <div class="input-label">
+          故障等级
+        </div>
+        <!--<select ng-model="bugRecord.faultLevel" ng-options="item.id as item.name for item in bugLevel"></select>-->
+        <select-box ng-Selected-Value="bugLevel[0].name"
+                    ng-Selected-Id="selectedId"
+                    ng-Item-Name="name"
+                    ng-Item-Id="id"
+                    ng-title="选择故障等级"
+                    ng-data="bugLevel"
+                    ng-placeholder="nothing selected"></select-box>
+      </ion-item>
+
+
+      <ion-item class="item item-input">
+        <textarea name="a" rows="4" placeholder="故障详情" ng-model="bugRecord.eventContent"></textarea>
+      </ion-item>
+
+    </ion-list>
+    <div class="padding">
+      <button type="submit" class="button button-block button-positive">提交</button>
+    </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ion-view  hide-tabs="true" view-title="选择接收人">
+  <ion-content> 
+    <ion-list>
+      <ion-item>已选择：{{}}</ion-item>  
+      <ion-checkbox class="checkbox-positive" ng-repeat="item in items" ng-model="item.id">
+        {{item.label}} : {{item.id}}
+      </ion-checkbox> 
+    </ion-list> 
+  </ion-content>
+</ion-view>

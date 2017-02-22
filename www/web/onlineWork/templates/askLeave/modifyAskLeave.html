@@ -1,0 +1,54 @@
+<ion-view hide-tabs="true" view-title="修改请假申请">
+
+
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          部门领导意见
+        </div>
+        <p>{{askLeave.variables.leaderBackReason}}</p>
+      </ion-item>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          单位领导意见
+        </div>
+        <p>{{askLeave.variables.hrBackReason}}</p>
+      </ion-item>
+
+      <div class="item item-divider">
+      </div>
+
+      <ion-item class="item item-input item-select">
+        <div class="input-label">
+          请假类型
+        </div>
+        <select ng-model="askLeave.leaveType" ng-options="item.id as item.name for item in leaveLevel"></select>
+      </ion-item>
+
+
+      <div class="item item-input" ion-datetime-picker ng-model="askLeave.startTime">
+        <div class="input-label">
+          开始时间
+        </div>
+        {{askLeave.startTime| date: "yyyy-MM-dd H:mm"}}
+      </div>
+
+      <div class="item item-input chevron-right" ion-datetime-picker ng-model="askLeave.endTime">
+        <div class="input-label">
+          结束时间
+        </div>
+        {{askLeave.endTime| date: "yyyy-MM-dd H:mm"}}
+      </div>
+      <ion-item class="item item-input">
+        <span class="input-label">请假事由</span>
+        <input type="text" ng-model="askLeave.reason">
+      </ion-item>
+    </ion-list>
+    <div class="two-btn">
+      <button ng-click="againLeave()">再次申请</button>
+      <button ng-click="abandonLeave()">放弃申请</button>
+    </div>
+  </ion-content>
+</ion-view>
+

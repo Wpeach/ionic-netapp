@@ -1,0 +1,44 @@
+<ion-view hide-tabs="true" view-title="申请加班">
+
+  <ion-content>
+    <form ng-submit="addAskWork()" name="form">
+    <ion-list>
+        <ion-item class="item item-input">
+          <span class="input-label">加班地点</span>
+          <input type="text" ng-model="askWork.place">
+        </ion-item>
+
+        <ion-item class="item item-input">
+          <span class="input-label">工作事项</span>
+          <input type="text" ng-model="askWork.workDesc">
+        </ion-item>
+
+      <div class="item item-input" ion-datetime-picker ng-model="askWork.startDate">
+        <div class="input-label">
+          开始时间
+        </div>
+        {{askWork.startDate| date: "yyyy-MM-dd H:mm"}}
+      </div>
+
+      <div class="item item-input chevron-right" ion-datetime-picker ng-model="askWork.endDate">
+        <div class="input-label">
+          结束时间
+        </div>
+        {{askWork.endDate| date: "yyyy-MM-dd H:mm"}}
+      </div>
+
+      <ion-item class="item item-input">
+        <span class="input-label">共计时数</span>
+        <input type="text" ng-model="askWork.sumHour" placeholder="整型数字">
+      </ion-item>
+
+      <ion-item class="item item-input">
+        <textarea name="a" rows="4" placeholder="备注信息" ng-model="askWork.remarks"></textarea>
+      </ion-item>
+    </ion-list>
+    <div class="padding">
+      <button type="submit" class="button button-block button-positive">提交</button>
+    </div>
+      </form>
+  </ion-content>
+</ion-view>

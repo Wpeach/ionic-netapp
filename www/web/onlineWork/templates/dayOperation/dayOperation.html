@@ -1,0 +1,384 @@
+<ion-view hide-tabs="true" view-title="每日工作">
+  <ion-content ng-controller="DayOperCtrl">
+    <form ng-submit="addDayOper()" name="form">
+    <ion-list>
+      <ion-item class="item item-input">
+        <div class="input-label">
+          值班人
+        </div>
+        <input type="text" ng-model="day.workman" >
+      </ion-item>
+
+      <ion-item class="item item-input item-select">
+        <div class="input-label">
+          校区
+        </div>
+        <select ng-model="day.campus">
+          <option  selected="">前湖校区</option>
+          <option>青山湖校区</option>
+        </select>
+      </ion-item>
+
+      <ion-item class="item item-input">
+        <div class="input-label">
+          时间
+        </div>
+        <input type="date" ng-model="day.date">
+      </ion-item>
+
+      <div class="item item-divider">
+      <label>一、机房机柜环境检查</label>
+    </div>
+      <ion-item class="item item-input">
+        <p style="font-size: smaller;color: #9e9e9e">机柜、服务器、空调、UPS、如有异常（告警灯告警音）请记录，需记录机柜编号和机器编号，并记录最终处理结果。</p>
+      </ion-item>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-model="day.aexp0830" ng-init="day.aexp0830='正常'">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          13：30
+        </div>
+        <input type="text" ng-init="day.aExp1330='正常'" ng-model="day.aExp1330">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19：30
+        </div>
+        <input type="text" ng-init="day.aExp1930='正常'" ng-model="day.aExp1930">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          20：30
+        </div>
+        <input type="text" ng-init="day.aExp2030='正常'" ng-model="day.aExp2030">
+      </div>
+      <div class="item item-divider">
+        <label>二、重点网站和系统</label>
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">学校首页&nbsp;www.ncu.edu.cn</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.bWww0830='正常'" ng-model="day.bWww0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.bWww1400='正常'" ng-model="day.bWww1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.bWww1900='正常'" ng-model="day.bWww1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">校园邮件&nbsp;mail.ncu.edu.cn</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.bMail0830='正常'" ng-model="day.bMail0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.bMail1400='正常'" ng-model="day.bMail1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.bMail1900='正常'" ng-model="day.bMail1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">学校OA&nbsp;oa.ncu.edu.cn</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.bOa0830='正常'" ng-model="day.bOa0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.bOa1400='正常'" ng-model="day.bOa1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.bOa1900='正常'" ng-model="day.bOa1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">WEB-VPN&nbsp;webvpn.ncu.edu.cn</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.bWeb0830='正常'" ng-model="day.bWeb0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.bWeb1400='正常'" ng-model="day.bWeb1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.bWeb1900='正常'" ng-model="day.bWeb1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">校园门户&nbsp;www.ncu.edu.cn</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.bMy0830='正常'" ng-model="day.bMy0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.bMy1400='正常'" ng-model="day.bMy1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.bMy1900='正常'" ng-model="day.bMy1900">
+      </div>
+      <ion-item class="item item-input">
+        <textarea name="a" rows="2" placeholder="说明" ng-model="day.bExplain"></textarea>
+      </ion-item>
+
+
+      <div class="item item-divider">
+        <label>二、what's up拓扑监控</label>
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">有线网监控</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.cWire0830='正常'" ng-model="day.cWire0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.cWire1330='正常'" ng-model="day.cWire1330">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.cWire1930='正常'" ng-model="day.cWire1930">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">无线网监控</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.cWireless0830='正常'" ng-model="day.cWireless0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.cWireless1400='正常'" ng-model="day.cWireless1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.cWireless1900='正常'" ng-model="day.cWireless1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">节能、指纹等网络监控</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.cEnergy0830='正常'" ng-model="day.cEnergy0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.cEnergy1400='正常'" ng-model="day.cEnergy1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.cEnergy1900='正常'" ng-model="day.cEnergy1900">
+      </div>
+
+
+      <div class="item item-divider">
+        <label>四、流量监控（mrtg2.ncu.edu.cn）</label>
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">校出口流量</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.dSchool0830='正常'" ng-model="day.dSchool0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.dSchool1400='正常'" ng-model="day.dSchool1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.dSchool1900='正常'" ng-model="day.dSchool1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">运营商无线总流量</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.dOperat0830='正常'" ng-model="day.dOperat0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.dOperat1400='正常'" ng-model="day.dOperat1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.dOperat1900='正常'" ng-model="day.dOperat1900">
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">重要节点流量</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          8：30
+        </div>
+        <input type="text" ng-init="day.dPart0830='正常'" ng-model="day.dPart0830">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          14:00
+        </div>
+        <input type="text" ng-init="day.dPart1400='正常'" ng-model="day.dPart1400">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          19:00
+        </div>
+        <input type="text" ng-init="day.dPart1900='正常'" ng-model="day.dPart1900">
+      </div>
+
+
+      <div class="item item-divider">
+        <label>五、AP在线数监控</label>
+      </div>
+      <div class="item">
+        <p style="font-size: smaller;color: #9e9e9e">掉线AP当天发现当天处理，以每天早上数据为准</p>
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          总数
+        </div>
+        <input type="text" ng-init="day.total='正常'" ng-model="day.total">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          AC板卡1
+        </div>
+        <input type="text" ng-init="day.ac1='正常'" ng-model="day.ac1">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          AC板卡2
+        </div>
+        <input type="text" ng-init="day.ac2='正常'" ng-model="day.ac2">
+      </div>
+     <div class="item item-input">
+        <div class="input-label">
+          AC板卡3
+        </div>
+        <input type="text" ng-init="day.ac3='正常'" ng-model="day.ac3">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          AC板卡4
+        </div>
+        <input type="text" ng-init="day.ac4='正常'" ng-model="day.ac4">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          AC板卡5
+        </div>
+        <input type="text" ng-init="day.ac5='正常'" ng-model="day.ac5">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          AC板卡6
+        </div>
+        <input type="text" ng-init="day.ac6='正常'" ng-model="day.ac6">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          锐捷板卡
+        </div>
+        <input type="text" ng-init="day.ruijie='正常'" ng-model="day.ruijie">
+      </div>
+      <div class="item item-input">
+        <div class="input-label">
+          ArubaAC
+        </div>
+        <input type="text" ng-init="day.arubaac='正常'" ng-model="day.arubaac">
+      </div>
+
+      <div class="item item-divider">
+        <label>六、其它需说明的问题</label>
+      </div>
+      <ion-item class="item item-input">
+        <textarea name="a" rows="4" placeholder="问题说明" ng-model="day.totalExplain"></textarea>
+      </ion-item>
+
+    </ion-list>
+    <div class="padding">
+      <button type="submit" class="button button-block button-positive">提交</button>
+    </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+

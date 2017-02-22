@@ -1,0 +1,19 @@
+<div style="width: 100%" class="page-panel">
+  <p class="canvas-title">月视图</p>
+  <canvas style="display:block;margin: 0 auto;" id="line" height="220px" class="chart chart-line" chart-data="apMonData" chart-labels="apMonLabels" chart-legend="true"></canvas>
+</div>
+<div class="page-panel" style="margin-top: 10px;">
+  <form ng-submit="getAcHisMon(selectValue)">
+    <div class="item item-input item-select">
+      <div class="input-label">
+        AC编号
+      </div>
+      <select ng-model="selectValue" ng-options="item.id as item.nameAndBrand for item in acConfig"></select>
+    </div>
+    <div class="padding">
+      <button type="submit" class="button button-block button-positive">查询</button>
+    </div>
+  </form>
+  <canvas style="display:block;margin: 0 auto;" id="ac" height="220px" class="chart chart-line" chart-data="acMonData" chart-labels="acMonLabels" chart-legend="true"></canvas>
+</div>
+
